@@ -11,9 +11,14 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // Variables
-    var factDataTableView: UITableView!
+    private var factDataTableView: UITableView!
     private var viewModel = FactDataViewModel()
-    
+    private var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        return refreshControl
+    }()
+
     // Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +43,14 @@ class HomeViewController: UIViewController {
         factDataTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         factDataTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
 
+        factDataTableView.addSubview(refreshControl)
         factDataTableView.reloadData()
     }
 
     private func retriveData() {
         title = "Loading..."
         viewModel.fetchData {[unowned self] (factDataModel, error) in
+            self.stopRefreshing()
             guard error == nil else {
                 DispatchQueue.main.async {
                     self.title = "Failed to load!"
@@ -63,6 +70,16 @@ class HomeViewController: UIViewController {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
+    }
+
+    @objc private func refreshData() {
+        retriveData()
+    }
+
+    private func stopRefreshing() {
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+        }
     }
 }
 

@@ -20,13 +20,7 @@ class RowDataViewModel {
         return rowData?.description
     }
 
-    var image: UIImage {
-        return loadImage()
-    }
-}
-
-extension RowDataViewModel {
-    func loadImage() -> UIImage {
-        return #imageLiteral(resourceName: "wipro-placeholder")
+    var imageUrl: String? {
+        return rowData?.imageHref
     }
 }

@@ -70,7 +70,7 @@ class FactDataTableViewCell: UITableViewCell {
 
     func loadCellData(rowData: RowDataModel) {
         viewModel.rowData = rowData
-        dataImageView.image = viewModel.image
+        dataImageView.loadImage(imageHref: viewModel.imageUrl)
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
     }
