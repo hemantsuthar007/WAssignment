@@ -22,7 +22,6 @@ class FactDataViewModel {
 
 extension FactDataViewModel {
     func fetchData(result: @escaping (Error?) -> Void) {
-        
         FactServiceRequestManager().fetchData {[unowned self] (factDataModel, error) in
             if let fdModel = factDataModel {
                 self.factDataModel = fdModel

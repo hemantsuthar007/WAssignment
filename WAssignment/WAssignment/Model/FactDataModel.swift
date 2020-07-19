@@ -7,7 +7,7 @@
 //
 
 struct FactDataModel: Decodable {
-    var title = "as"
+    var title = ""
     var rows: [RowDataModel] = []
 }
 

@@ -11,9 +11,9 @@ import UIKit
 class HomeViewController: UIViewController {
 
     // Variables
-    private var factDataTableView: UITableView!
-    private var viewModel = FactDataViewModel()
-    private var refreshControl: UIRefreshControl = {
+    var factDataTableView: UITableView!
+    var viewModel = FactDataViewModel()
+    var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         return refreshControl
@@ -22,13 +22,14 @@ class HomeViewController: UIViewController {
     // Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         title = viewModel.title
         setupUI()
         retriveData()
     }
 
     // setup UI
-    private func setupUI() {
+    func setupUI() {
         factDataTableView = UITableView(frame: view.bounds)
         view.addSubview(factDataTableView)
         factDataTableView.allowsSelection = false
@@ -47,7 +48,7 @@ class HomeViewController: UIViewController {
         factDataTableView.reloadData()
     }
 
-    private func retriveData() {
+    func retriveData() {
         title = "Loading..."
         viewModel.fetchData {[unowned self] (error) in
             DispatchQueue.main.async {
@@ -69,7 +70,7 @@ class HomeViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
 
-    @objc private func refreshData() {
+    @objc func refreshData() {
         retriveData()
     }
 

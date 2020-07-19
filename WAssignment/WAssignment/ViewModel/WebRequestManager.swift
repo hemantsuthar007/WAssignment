@@ -39,7 +39,7 @@ class WebRequestManager {
         }
 
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = method?.rawValue
+        urlRequest.httpMethod = method?.rawValue.uppercased()
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
