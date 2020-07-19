@@ -14,6 +14,8 @@
 		41C168E224C31E0B002DA5FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C168E124C31E0B002DA5FD /* Preview Assets.xcassets */; };
 		41C168E524C31E0B002DA5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C168E324C31E0B002DA5FD /* LaunchScreen.storyboard */; };
 		41C168F024C31E0B002DA5FD /* WAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168EF24C31E0B002DA5FD /* WAssignmentTests.swift */; };
+		41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168FF24C32F32002DA5FD /* HomeViewController.swift */; };
+		41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		41C168EB24C31E0B002DA5FD /* WAssignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WAssignmentTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C168EF24C31E0B002DA5FD /* WAssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WAssignmentTests.swift; sourceTree = "<group>"; };
 		41C168F124C31E0B002DA5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C168FF24C32F32002DA5FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactDataTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +86,8 @@
 				41C168D824C31E08002DA5FD /* AppDelegate.swift */,
 				41C168DA24C31E08002DA5FD /* SceneDelegate.swift */,
 				41C168DC24C31E08002DA5FD /* ContentView.swift */,
+				41C168FC24C32EDC002DA5FD /* ViewControllers */,
+				41C1690124C402F9002DA5FD /* TableViewCell */,
 				41C168DE24C31E0B002DA5FD /* Assets.xcassets */,
 				41C168E324C31E0B002DA5FD /* LaunchScreen.storyboard */,
 				41C168E624C31E0B002DA5FD /* Info.plist */,
@@ -105,6 +111,22 @@
 				41C168F124C31E0B002DA5FD /* Info.plist */,
 			);
 			path = WAssignmentTests;
+			sourceTree = "<group>";
+		};
+		41C168FC24C32EDC002DA5FD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				41C168FF24C32F32002DA5FD /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		41C1690124C402F9002DA5FD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +230,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */,
+				41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */,
 				41C168D924C31E08002DA5FD /* AppDelegate.swift in Sources */,
 				41C168DB24C31E08002DA5FD /* SceneDelegate.swift in Sources */,
 				41C168DD24C31E08002DA5FD /* ContentView.swift in Sources */,
