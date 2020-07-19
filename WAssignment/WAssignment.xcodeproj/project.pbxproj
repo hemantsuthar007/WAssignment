@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		41C168D924C31E08002DA5FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168D824C31E08002DA5FD /* AppDelegate.swift */; };
 		41C168DB24C31E08002DA5FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168DA24C31E08002DA5FD /* SceneDelegate.swift */; };
-		41C168DD24C31E08002DA5FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168DC24C31E08002DA5FD /* ContentView.swift */; };
 		41C168DF24C31E0B002DA5FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C168DE24C31E0B002DA5FD /* Assets.xcassets */; };
 		41C168E224C31E0B002DA5FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C168E124C31E0B002DA5FD /* Preview Assets.xcassets */; };
 		41C168E524C31E0B002DA5FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C168E324C31E0B002DA5FD /* LaunchScreen.storyboard */; };
 		41C168F024C31E0B002DA5FD /* WAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168EF24C31E0B002DA5FD /* WAssignmentTests.swift */; };
 		41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C168FF24C32F32002DA5FD /* HomeViewController.swift */; };
 		41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */; };
+		41C1690624C41C0D002DA5FD /* FactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690524C41C0D002DA5FD /* FactDataModel.swift */; };
+		41C1690C24C421C2002DA5FD /* FactDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */; };
+		41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +34,6 @@
 		41C168D524C31E08002DA5FD /* WAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C168D824C31E08002DA5FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41C168DA24C31E08002DA5FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		41C168DC24C31E08002DA5FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		41C168DE24C31E0B002DA5FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41C168E124C31E0B002DA5FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		41C168E424C31E0B002DA5FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +43,9 @@
 		41C168F124C31E0B002DA5FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41C168FF24C32F32002DA5FD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactDataTableViewCell.swift; sourceTree = "<group>"; };
+		41C1690524C41C0D002DA5FD /* FactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactDataModel.swift; sourceTree = "<group>"; };
+		41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactDataViewModel.swift; sourceTree = "<group>"; };
+		41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +89,10 @@
 			children = (
 				41C168D824C31E08002DA5FD /* AppDelegate.swift */,
 				41C168DA24C31E08002DA5FD /* SceneDelegate.swift */,
-				41C168DC24C31E08002DA5FD /* ContentView.swift */,
 				41C168FC24C32EDC002DA5FD /* ViewControllers */,
 				41C1690124C402F9002DA5FD /* TableViewCell */,
+				41C1690424C41AAF002DA5FD /* Model */,
+				41C1690A24C421C2002DA5FD /* ViewModel */,
 				41C168DE24C31E0B002DA5FD /* Assets.xcassets */,
 				41C168E324C31E0B002DA5FD /* LaunchScreen.storyboard */,
 				41C168E624C31E0B002DA5FD /* Info.plist */,
@@ -127,6 +132,23 @@
 				41C1690224C40332002DA5FD /* FactDataTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		41C1690424C41AAF002DA5FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				41C1690524C41C0D002DA5FD /* FactDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		41C1690A24C421C2002DA5FD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */,
+				41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,11 +252,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C1690C24C421C2002DA5FD /* FactDataViewModel.swift in Sources */,
+				41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */,
 				41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */,
+				41C1690624C41C0D002DA5FD /* FactDataModel.swift in Sources */,
 				41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */,
 				41C168D924C31E08002DA5FD /* AppDelegate.swift in Sources */,
 				41C168DB24C31E08002DA5FD /* SceneDelegate.swift in Sources */,
-				41C168DD24C31E08002DA5FD /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -372,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -390,6 +414,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WAssignment/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,6 +434,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"WAssignment/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WAssignment/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

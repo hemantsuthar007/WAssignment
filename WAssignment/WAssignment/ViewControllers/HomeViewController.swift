@@ -12,12 +12,12 @@ class HomeViewController: UIViewController {
 
     // Variables
     var factDataTableView: UITableView!
+    private var viewModel = FactDataViewModel()
     
     // Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Got it"
-        // Do any additional setup after loading the view.
+        title = viewModel.title
         setupUI()
     }
 
@@ -37,35 +37,26 @@ class HomeViewController: UIViewController {
         factDataTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         factDataTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-        
+        viewModel.factDataModel.dataList = [RowDataModel(title: "Beavers",
+                                                        description: "Beavers a",
+                                                        imageHref: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg"),
+                                           RowDataModel(title: "Flag",
+                                                        description: "It is a well known fact that polar bears are the main mode of transportation in Canada. They consume far less gas and have the added benefit of being difficult to steal.",
+                                                        imageHref: "http://1.bp.blogspot.com/_VZVOmYVm68Q/SMkzZzkGXKI/AAAAAAAAADQ/U89miaCkcyo/s400/the_golden_compass_still.jpg")]
         factDataTableView.reloadData()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 // MARK:- TableView DataSource
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.dataList.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentofier", for: indexPath) as! FactDataTableViewCell
-        cell.dataImageView.backgroundColor = .blue
-        cell.titleLabel.text = "This is the sameple one"
-        cell.descriptionLabel.text = "This is the sameple oneThis is the sameple oneThis is the sameple one \n This is the sameple one \nThis is the sameple one"
-        cell.contentView.backgroundColor = .yellow
+        cell.loadCellData(rowData: viewModel.dataList[indexPath.row])
         return cell
     }
 }

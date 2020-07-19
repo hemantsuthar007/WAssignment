@@ -11,6 +11,8 @@ import UIKit
 class FactDataTableViewCell: UITableViewCell {
     
     // Variables
+    var viewModel = RowDataViewModel()
+
     let dataImageView: UIImageView  = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +52,8 @@ class FactDataTableViewCell: UITableViewCell {
         contentView.addSubview(dataImageView)
         dataImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         dataImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        dataImageView.widthAnchor.constraint(equalToConstant: 60).isActive = true
-        dataImageView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        dataImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        dataImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: dataImageView.trailingAnchor, constant: 8).isActive = true
@@ -63,5 +65,12 @@ class FactDataTableViewCell: UITableViewCell {
         descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8).isActive = true
         descriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8).isActive = true
+    }
+
+    func loadCellData(rowData: RowDataModel) {
+        viewModel.rowData = rowData
+        dataImageView.image = viewModel.image
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
     }
 }
