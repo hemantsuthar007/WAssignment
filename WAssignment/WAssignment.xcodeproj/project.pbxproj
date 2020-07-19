@@ -18,6 +18,7 @@
 		41C1690624C41C0D002DA5FD /* FactDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690524C41C0D002DA5FD /* FactDataModel.swift */; };
 		41C1690C24C421C2002DA5FD /* FactDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */; };
 		41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */; };
+		41C1691024C446D1002DA5FD /* WebRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690F24C446D1002DA5FD /* WebRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		41C1690524C41C0D002DA5FD /* FactDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactDataModel.swift; sourceTree = "<group>"; };
 		41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactDataViewModel.swift; sourceTree = "<group>"; };
 		41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDataViewModel.swift; sourceTree = "<group>"; };
+		41C1690F24C446D1002DA5FD /* WebRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */,
 				41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */,
+				41C1690F24C446D1002DA5FD /* WebRequestManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */,
 				41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */,
 				41C1690624C41C0D002DA5FD /* FactDataModel.swift in Sources */,
+				41C1691024C446D1002DA5FD /* WebRequestManager.swift in Sources */,
 				41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */,
 				41C168D924C31E08002DA5FD /* AppDelegate.swift in Sources */,
 				41C168DB24C31E08002DA5FD /* SceneDelegate.swift in Sources */,

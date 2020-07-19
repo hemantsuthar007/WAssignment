@@ -52,14 +52,15 @@ class FactDataTableViewCell: UITableViewCell {
         contentView.addSubview(dataImageView)
         dataImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8).isActive = true
         dataImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
+        dataImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -8).isActive = true
         dataImageView.widthAnchor.constraint(equalToConstant: 100).isActive = true
         dataImageView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
+
         contentView.addSubview(titleLabel)
         titleLabel.leadingAnchor.constraint(equalTo: dataImageView.trailingAnchor, constant: 8).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
         titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8).isActive = true
-        
+
         contentView.addSubview(descriptionLabel)
         descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true

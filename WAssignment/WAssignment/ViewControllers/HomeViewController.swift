@@ -19,6 +19,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         title = viewModel.title
         setupUI()
+        retriveData()
     }
 
     // setup UI
@@ -36,14 +37,32 @@ class HomeViewController: UIViewController {
         factDataTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         factDataTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         factDataTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-        viewModel.factDataModel.dataList = [RowDataModel(title: "Beavers",
-                                                        description: "Beavers a",
-                                                        imageHref: "http://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/American_Beaver.jpg/220px-American_Beaver.jpg"),
-                                           RowDataModel(title: "Flag",
-                                                        description: "It is a well known fact that polar bears are the main mode of transportation in Canada. They consume far less gas and have the added benefit of being difficult to steal.",
-                                                        imageHref: "http://1.bp.blogspot.com/_VZVOmYVm68Q/SMkzZzkGXKI/AAAAAAAAADQ/U89miaCkcyo/s400/the_golden_compass_still.jpg")]
+
         factDataTableView.reloadData()
+    }
+
+    private func retriveData() {
+        title = "Loading..."
+        viewModel.fetchData {[unowned self] (factDataModel, error) in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self.title = "Failed to load!"
+                    self.showAlert(title: "Error!", message: error?.localizedDescription)
+                }
+                return
+            }
+            self.viewModel.factDataModel = factDataModel ?? FactDataModel()
+            DispatchQueue.main.async {
+                self.title = self.viewModel.title
+                self.factDataTableView.reloadData()
+            }
+        }
+    }
+
+    private func showAlert(title: String?, message: String?) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }
 
@@ -51,12 +70,12 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.dataList.count
+        return viewModel.rows.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellIdentofier", for: indexPath) as! FactDataTableViewCell
-        cell.loadCellData(rowData: viewModel.dataList[indexPath.row])
+        cell.loadCellData(rowData: viewModel.rows[indexPath.row])
         return cell
     }
 }

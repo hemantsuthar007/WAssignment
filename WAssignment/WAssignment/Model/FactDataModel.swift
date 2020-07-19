@@ -6,12 +6,12 @@
 //  Copyright © 2020 Hemant. All rights reserved.
 //
 
-struct FactDataModel {
+struct FactDataModel: Decodable {
     var title = "as"
-    var dataList: [RowDataModel] = []
+    var rows: [RowDataModel] = []
 }
 
-struct RowDataModel {
+struct RowDataModel: Decodable {
     let title: String?
     let description: String?
     let imageHref: String?
