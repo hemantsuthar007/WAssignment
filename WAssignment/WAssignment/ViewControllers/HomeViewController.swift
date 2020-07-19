@@ -30,8 +30,8 @@ class HomeViewController: UIViewController {
     // setup UI
     private func setupUI() {
         factDataTableView = UITableView(frame: view.bounds)
-        factDataTableView.backgroundColor = .red
         view.addSubview(factDataTableView)
+        factDataTableView.allowsSelection = false
         factDataTableView.dataSource = self
         factDataTableView.register(FactDataTableViewCell.self, forCellReuseIdentifier: "CellIdentofier")
         factDataTableView.rowHeight = UITableView.automaticDimension
@@ -49,17 +49,14 @@ class HomeViewController: UIViewController {
 
     private func retriveData() {
         title = "Loading..."
-        viewModel.fetchData {[unowned self] (factDataModel, error) in
-            self.stopRefreshing()
-            guard error == nil else {
-                DispatchQueue.main.async {
+        viewModel.fetchData {[unowned self] (error) in
+            DispatchQueue.main.async {
+                self.stopRefreshing()
+                guard error == nil else {
                     self.title = "Failed to load!"
                     self.showAlert(title: "Error!", message: error?.localizedDescription)
+                    return
                 }
-                return
-            }
-            self.viewModel.factDataModel = factDataModel ?? FactDataModel()
-            DispatchQueue.main.async {
                 self.title = self.viewModel.title
                 self.factDataTableView.reloadData()
             }

@@ -21,26 +21,13 @@ class FactDataViewModel {
 }
 
 extension FactDataViewModel {
-    func fetchData(result: @escaping (FactDataModel?, Error?) -> Void) {
-        let urlString = "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json"
-        WebRequestManager().request(urlString: urlString, method: .get) {[unowned self] (data, urlResponse, error) in
-            guard error == nil else {
-                result(nil, error)
-                return
+    func fetchData(result: @escaping (Error?) -> Void) {
+        
+        FactServiceRequestManager().fetchData {[unowned self] (factDataModel, error) in
+            if let fdModel = factDataModel {
+                self.factDataModel = fdModel
             }
-            if let responseData = data {
-                if let responseString = String(data: responseData, encoding: .isoLatin1),
-                    let encodedData = responseString.data(using: String.Encoding.utf8){
-                    do {
-                        self.factDataModel = try JSONDecoder().decode(FactDataModel.self, from: encodedData)
-                        result(self.factDataModel, nil)
-                    } catch let jsonError {
-                        result(nil, jsonError)
-                    }
-                    return
-                }
-            }
-            result(nil, NetworkError.inValidResponse)
+            result(error)
         }
     }
 }

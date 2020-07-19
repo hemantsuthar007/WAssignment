@@ -19,6 +19,8 @@
 		41C1690C24C421C2002DA5FD /* FactDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */; };
 		41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */; };
 		41C1691024C446D1002DA5FD /* WebRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1690F24C446D1002DA5FD /* WebRequestManager.swift */; };
+		41C1691324C4B09F002DA5FD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1691224C4B09F002DA5FD /* Extensions.swift */; };
+		41C1691524C4B15E002DA5FD /* ServiceRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C1691424C4B15E002DA5FD /* ServiceRequestManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FactDataViewModel.swift; sourceTree = "<group>"; };
 		41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowDataViewModel.swift; sourceTree = "<group>"; };
 		41C1690F24C446D1002DA5FD /* WebRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebRequestManager.swift; sourceTree = "<group>"; };
+		41C1691224C4B09F002DA5FD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		41C1691424C4B15E002DA5FD /* ServiceRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequestManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 				41C1690124C402F9002DA5FD /* TableViewCell */,
 				41C1690424C41AAF002DA5FD /* Model */,
 				41C1690A24C421C2002DA5FD /* ViewModel */,
+				41C1691124C4B078002DA5FD /* Extensions */,
 				41C168DE24C31E0B002DA5FD /* Assets.xcassets */,
 				41C168E324C31E0B002DA5FD /* LaunchScreen.storyboard */,
 				41C168E624C31E0B002DA5FD /* Info.plist */,
@@ -148,10 +153,19 @@
 			isa = PBXGroup;
 			children = (
 				41C1690B24C421C2002DA5FD /* FactDataViewModel.swift */,
+				41C1691424C4B15E002DA5FD /* ServiceRequestManager.swift */,
 				41C1690D24C426AF002DA5FD /* RowDataViewModel.swift */,
 				41C1690F24C446D1002DA5FD /* WebRequestManager.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		41C1691124C4B078002DA5FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				41C1691224C4B09F002DA5FD /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,9 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				41C1690C24C421C2002DA5FD /* FactDataViewModel.swift in Sources */,
+				41C1691324C4B09F002DA5FD /* Extensions.swift in Sources */,
 				41C1690E24C426AF002DA5FD /* RowDataViewModel.swift in Sources */,
 				41C1690324C40332002DA5FD /* FactDataTableViewCell.swift in Sources */,
 				41C1690624C41C0D002DA5FD /* FactDataModel.swift in Sources */,
+				41C1691524C4B15E002DA5FD /* ServiceRequestManager.swift in Sources */,
 				41C1691024C446D1002DA5FD /* WebRequestManager.swift in Sources */,
 				41C1690024C32F32002DA5FD /* HomeViewController.swift in Sources */,
 				41C168D924C31E08002DA5FD /* AppDelegate.swift in Sources */,
